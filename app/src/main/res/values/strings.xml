@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Currency Converter</string>
+
+    <string name="msg_error_taptoretry">Tap to Retry</string>
+    <string name="msg_error_progresslayoutnochild">Progress layout should contain atleast one child!</string>
+    <string name="msg_error_progresslayoutmultiplechild">Progress layout should contain only one child!</string>
+    <string name="amount_to_convert">Amount to Convert</string>
+
+    <!-- CONVERTER ACTIVITY-->
+    <string name="source_currency">Source Currency</string>
+    <string name="destination_currency">Destination Currency</string>
+    <string name="btn_convert">Convert</string>
+    <string name="convert_success">Convert Success</string>
+    <string name="ok">OK</string>
+    <string name="title_convert_currency">Convert Currency</string>
+
+    <!--    MAIN ACTIVITY-->
+    <string name="account_balance">Account Balance</string>
+
+</resources>

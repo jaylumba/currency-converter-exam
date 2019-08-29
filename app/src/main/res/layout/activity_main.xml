@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.main.MainActivity">
+
+
+    <include
+        android:id="@+id/appBar"
+        layout="@layout/include_app_bar"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_base"
+        android:layout_marginTop="@dimen/spacing_base"
+        android:layout_marginBottom="@dimen/spacing_base"
+        android:textSize="@dimen/fontsize_title"
+        android:textColor="@color/colorSecondaryText"
+        android:text="@string/account_balance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnConvert"
+        app:layout_constraintBottom_toBottomOf="@+id/btnConvert"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnConvert"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_base"
+        android:transitionName="btnConvertTransition"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/btn_convert"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/spacing_base2x"
+        tools:listitem="@layout/item_account"
+        app:layout_constraintTop_toBottomOf="@id/btnConvert"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

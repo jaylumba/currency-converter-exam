@@ -1,0 +1,149 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        applicationId "com.jcl.exam.emapta"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName "1.1.1"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+
+    kapt { generateStubs = true }
+    flavorDimensions "default"
+    productFlavors {
+        dev {
+            applicationIdSuffix ".dev"
+            versionNameSuffix "-dev"
+            dimension "default"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //Support
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // ButterKnife
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVersion"
+    kapt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVersion"
+
+    //Calligraphy
+    implementation "uk.co.chrisjenx:calligraphy:$rootProject.ext.calligraphyVersion"
+
+    //ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    // Dagger core
+    kapt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+
+    // Dagger Android
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.ext.daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.ext.daggerVersion"
+
+    //EventBus
+    implementation "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+
+    //Mockito
+    implementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
+    androidTestImplementation "org.mockito:mockito-android:$rootProject.ext.mockitoVersion"
+
+    //MockWebServer
+    testImplementation "com.squareup.okhttp3:mockwebserver:$rootProject.ext.mockWebServerVersion"
+
+    //MultiDex
+    implementation "androidx.multidex:multidex:$rootProject.ext.multidexVersion"
+
+    //Picasso
+    implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$rootProject.ext.picassoVersion"
+
+    //RecyclerView Animator
+    implementation("jp.wasabeef:recyclerview-animators:$rootProject.ext.recyclerViewAnimatorVersion") {
+        exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-compat'
+        exclude group: 'com.android.support', module: 'support-core-ui'
+    }
+
+    //Retrofit
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.loggingInterceptorVesion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitAdapterRxVersion"
+
+    //RoboElectric
+    testImplementation "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
+
+    // Room database
+    implementation "androidx.room:room-runtime:$rootProject.ext.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.ext.roomVersion"
+    implementation "androidx.room:room-common:$rootProject.ext.roomVersion"
+    implementation "androidx.room:room-rxjava2:$rootProject.ext.roomVersion"
+
+    // Rx
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxAndroidVersion"
+
+    // RxRelay
+    implementation "com.jakewharton.rxrelay2:rxrelay:$rootProject.ext.rxRelayVersion"
+
+    //Sdp
+    implementation "com.intuit.sdp:sdp-android:$rootProject.ext.sdpVersion"
+
+    //Ssp
+    implementation "com.intuit.ssp:ssp-android:$rootProject.ext.sdpVersion"
+
+    // Timber
+    implementation "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
+
+    //Toasty
+    implementation "com.github.GrenderG:Toasty:$rootProject.ext.toastyVersion"
+
+    //LoadingIndicator
+    implementation "com.wang.avi:library:$rootProject.ext.wangAviVersion"
+}

@@ -1,0 +1,33 @@
+<resources>
+    <!--Font Size-->
+    <dimen name="fontsize_display4">@dimen/_86ssp</dimen>
+    <dimen name="fontsize_display3">@dimen/_43ssp</dimen>
+    <dimen name="fontsize_display2">@dimen/_35ssp</dimen>
+    <dimen name="fontsize_display1">@dimen/_26ssp</dimen>
+    <dimen name="fontsize_headline">@dimen/_18ssp</dimen>
+    <dimen name="fontsize_title">@dimen/_15ssp</dimen>
+    <dimen name="fontsize_subheading">@dimen/_12ssp</dimen>
+    <dimen name="fontsize_body2">@dimen/_9ssp</dimen>
+    <dimen name="fontsize_body1">@dimen/_9ssp</dimen>
+    <dimen name="fontsize_caption">@dimen/_8ssp</dimen>
+    <dimen name="fontsize_button">@dimen/_14ssp</dimen>
+    <dimen name="fontsize_textfield">@dimen/_14ssp</dimen>
+    <dimen name="fontsize_texthint">@dimen/_10ssp</dimen>
+    <dimen name="fontsize_progress">@dimen/_7ssp</dimen>
+    <dimen name="fontsize_productname">@dimen/_10ssp</dimen>
+    <dimen name="fontsize_badge">@dimen/_10ssp</dimen>
+
+    <!--Spacing-->
+    <dimen name="spacing_base_half">@dimen/_3sdp</dimen>
+    <dimen name="spacing_base">@dimen/_6sdp</dimen>
+    <dimen name="spacing_base2x">@dimen/_12sdp</dimen>
+    <dimen name="spacing_base3x">@dimen/_18sdp</dimen>
+    <dimen name="spacing_base4x">@dimen/_24sdp</dimen>
+    <dimen name="spacing_base5x">@dimen/_30sdp</dimen>
+    <dimen name="spacing_base6x">@dimen/_36sdp</dimen>
+    <dimen name="spacing_base7x">@dimen/_42sdp</dimen>
+    <dimen name="spacing_base8x">@dimen/_48sdp</dimen>
+    <dimen name="spacing_base9x">@dimen/_54sdp</dimen>
+    <dimen name="spacing_base10x">@dimen/_60sdp</dimen>
+
+</resources>
